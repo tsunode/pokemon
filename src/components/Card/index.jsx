@@ -1,14 +1,14 @@
-import './styles.css';
+import "./styles.css";
 
-export const Card = () => {
+export const Card = ({ id, name, image }) => {
   return (
-    <li className='card'>
+    <li className="card">
       <div>
-        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png" alt="Ditto" />
+        <img src={image} alt={name} />
       </div>
       <div>
-        <span>132</span>
-        <span>Ditto</span>
+        <span>{id}</span>
+        <span>{name}</span>
       </div>
     </li>
   );
