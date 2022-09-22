@@ -5,32 +5,33 @@
 }
 
 .card img {
-    width: 100px;
-    height: 100px;
-    margin-top: -10px;
-    margin-left: -10px
+  width: 100px;
+  height: 100px;
+  margin-top: -10px;
+  margin-left: -10px;
 }
 
 .card div:nth-child(1) {
-  /* width: 154px;
-  height: 123px; */
   width: 30%;
   height: 100%;
-
   background: linear-gradient(176.29deg, #ffffff 3%, #544a4a 173.42%);
+  
   box-shadow: inset -2px 0px 0px #000000;
   border-radius: 10px 60px 60px 10px;
   z-index: 2;
 }
 
 .card div:nth-child(2) span {
-    margin-left: 45px;
-    line-height: 25px;
+  margin-left: 45px;
+  line-height: 25px;
 }
 
 .card div:nth-child(2) {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
   width: 50%;
   color: #ffffff;
 
@@ -39,6 +40,4 @@
 
   margin-left: -60px;
   z-index: 1;
-  justify-content: center;
-  align-items: center;
 }
