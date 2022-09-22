@@ -1,7 +1,7 @@
 import "./App.css";
 import { Card } from "./components/Card";
 
-function App() {
+export const App  =() => {
   return (
     <div className="App">
       <ul>
@@ -25,5 +25,3 @@ function App() {
     </div>
   );
 }
-
-export default App;
