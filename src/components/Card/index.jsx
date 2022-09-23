@@ -1,6 +1,8 @@
 import "./styles.css";
 
-export const Card = ({ id, name, image }) => {
+export const Card = ({ id, name }) => {
+  const image = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`;
+
   return (
     <li className="card">
       <div>

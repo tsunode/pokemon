@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 import { Card } from "./components/Card";
 
@@ -6,49 +6,27 @@ import api from "./services/api";
 import "./App.css";
 
 export const App = () => {
-  useEffect(() => {
-    api.get('/pokemon', {
-      params: {
-        limit: 151,
-        offset: 0
-      }
-    }).then(response => {
-      console.log(response);
-    })
-  }, []);
+  const [pokemons, setPokemons] = useState([]);
 
-  const pokemons = [
-    {
-      id: 132,
-      name: "Ditto",
-      image:
-        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png",
-    },
-    {
-      id: 132,
-      name: "Ditto",
-      image:
-        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png",
-    },
-    {
-      id: 132,
-      name: "Ditto",
-      image:
-        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png",
-    },
-    {
-      id: 132,
-      name: "Ditto",
-      image:
-        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png",
-    },
-  ];
+  useEffect(() => {
+    api
+      .get("/pokemon", {
+        params: {
+          limit: 151,
+          offset: 0,
+        },
+      })
+      .then((response) => {
+        setPokemons(response.data.results);
+      })
+      .catch((error) => console.error(error));
+  }, []);
 
   return (
     <div className="App">
       <ul>
-        {pokemons.map((pokemon) => (
-          <Card key={pokemon.id} {...pokemon} />
+        {pokemons.map((pokemon, index) => (
+          <Card key={index} id={index + 1} name={pokemon.name} />
         ))}
       </ul>
     </div>
